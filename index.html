@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Notification Styles Inspiration | Top Bar Slide</title>
+		<title>Simple Notification bar</title>
 		<meta name="description" content="Various styles and effects for unobtrusive notifications on a website" />
 		<meta name="keywords" content="notification, inspiration, style, effect, growl, javascript" />
 		<meta name="author" content="Codrops" />
@@ -15,9 +15,6 @@
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<style>
-
-</style>
 	</head>
 	<body class="color-5">
 		<div class="container">
@@ -37,10 +34,10 @@
 			</div>
 			<h2>For a simple implementation</h2>
 			<div class=""info>
-				<h3>Add the below mark up inside the body tag of your HTML file.</h3>
+				<h3>Within the body tab of your HTML file, place a button...</h3>
 				<div class="instr">
 					<pre class="snippet">
-&lt;button id="notification-trigger" class="progress-button"&gt;
+&lt;button id="a_button" class="progress-button"&gt;
 	&lt;span class="content"&gt;Show Notification&lt;/span&gt;
 &lt;/button&gt;
 					</pre>
@@ -48,24 +45,24 @@
 			</div>
 			
 			<div class="info">
-				<h3>In your HTML file, include Modrnizer.js</h3>
-				<div class="instr">
-					<pre class="snippet">path/to/modernizr.js</pre>
-				</div>
-			</div>
-			<div class="info">
-				<h3>and classie.js</h3>
-				<div class="instr">
-					<pre class="snippet">path/to/classie.js</pre>
-				</div>
-			</div>
-			<div class="info">
-				<h3>In your external/inline javascript, </h3>
+				<h3>... include the necessary javascript and CSS files...</h3>
 				<div class="instr">
 					<pre class="snippet">
-var bttn = document.getElementById('a_button');
-bttn.addEventListener('click', function() {
-	// your code here;
+&lt;script src="path/to/modernizr.js"&gt;&lt;/script&gt;
+&lt;script src="path/to/classie.js"&gt;&lt;/script&gt;
+
+&lt;link rel="stylesheet" type="text/css" href="css/notification.css" /&gt;
+&lt;script src="path/to/NotificationBar.js"&gt;&lt;/script&gt;
+					</pre>
+				</div>
+			</div>
+			<div class="info">
+				<h3>... and add an event listener to your button...</h3>
+				<div class="instr">
+					<pre class="snippet">
+<b class="keyword">var</b> bttn = document.getElementById(<b class="string_literal">'a_button'</b>);
+bttn.addEventListener(<b class="string_literal">'click'</b>, <b class="keyword">function</b>() {
+	<b class="comment">// your code here;</b>
 });
 					</pre>
 				</div>
@@ -74,17 +71,17 @@ bttn.addEventListener('click', function() {
 				<h3> Inside the event listener, initiate the notification bar and call its show() method:</h3>
 				<div class="instr">
 					<pre class="snippet">
-var bttn = document.getElementById('a_button');
-bttn.addEventListener('click', function() {
+<b class="keyword">var</b> bttn = document.getElementById(<b class="string_literal">'a_button'</b>);
+bttn.addEventListener(<b class="string_literal">'click'</b>, <b class="keyword">function</b>() {
 
-	// your button's specific operations.
+	<b class="comment">// your button's specific operations.</b>
 
-	// to notify completion.
-	var notification = new <b style="color: yellow; text-decoration: none;">NotificationBar</b>({
-		message : '&lt;p&gt;You have some interesting news in your inbox. Go &lt;a href="#"&gt;check it out&lt;/a&gt; now.&lt;/p&gt;',
-		icon: 'truck',
-		onClose : function() {
-			bttn.disabled = false;
+	<b class="comment">// to notify completion.</b>
+	<b class="keyword">var</b> notification = new <b style="color: yellow; text-decoration: none;">NotificationBar</b>({
+		message : <b class="string_literal">'&lt;p&gt;You have some interesting news in your inbox. Go &lt;a href="#"&gt;check it out&lt;/a&gt; now.&lt;/p&gt;'</b>,
+		icon: <b class="string_literal">'truck'</b>,
+		onClose : <b class="keyword">function</b>() {
+			bttn.disabled = <b class="keyword">false</b>;
 		}
 	});
 	
@@ -102,159 +99,159 @@ bttn.addEventListener('click', function() {
 	</header>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-heart"></span>
-		&nbsp;icon-heart
+		&nbsp;heart
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-cloud"></span>
-		&nbsp;icon-cloud
+		&nbsp;cloud
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-star"></span>
-		&nbsp;icon-star
+		&nbsp;star
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-tv"></span>
-		&nbsp;icon-tv
+		&nbsp;tv
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-sound"></span>
-		&nbsp;icon-sound
+		&nbsp;sound
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-video"></span>
-		&nbsp;icon-video
+		&nbsp;video
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-trash"></span>
-		&nbsp;icon-trash
+		&nbsp;trash
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-user"></span>
-		&nbsp;icon-user
+		&nbsp;user
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-key"></span>
-		&nbsp;icon-key
+		&nbsp;key
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-search"></span>
-		&nbsp;icon-search
+		&nbsp;search
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-settings"></span>
-		&nbsp;icon-settings
+		&nbsp;settings
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-camera"></span>
-		&nbsp;icon-camera
+		&nbsp;camera
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-tag"></span>
-		&nbsp;icon-tag
+		&nbsp;tag
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-lock"></span>
-		&nbsp;icon-lock
+		&nbsp;lock
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-bulb"></span>
-		&nbsp;icon-bulb
+		&nbsp;bulb
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-pen"></span>
-		&nbsp;icon-pen
+		&nbsp;pen
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-diamond"></span>
-		&nbsp;icon-diamond
+		&nbsp;diamond
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-display"></span>
-		&nbsp;icon-display
+		&nbsp;display
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-location"></span>
-		&nbsp;icon-location
+		&nbsp;location
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-eye"></span>
-		&nbsp;icon-eye
+		&nbsp;eye
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-bubble"></span>
-		&nbsp;icon-bubble
+		&nbsp;bubble
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-stack"></span>
-		&nbsp;icon-stack
+		&nbsp;stack
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-cup"></span>
-		&nbsp;icon-cup
+		&nbsp;cup
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-phone"></span>
-		&nbsp;icon-phone
+		&nbsp;phone
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-news"></span>
-		&nbsp;icon-news
+		&nbsp;news
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-mail"></span>
-		&nbsp;icon-mail
+		&nbsp;mail
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-like"></span>
-		&nbsp;icon-like
+		&nbsp;like
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-photo"></span>
-		&nbsp;icon-photo
+		&nbsp;photo
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-note"></span>
-		&nbsp;icon-note
+		&nbsp;note
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-clock"></span>
-		&nbsp;icon-clock
+		&nbsp;clock
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-paperplane"></span>
-		&nbsp;icon-paperplane
+		&nbsp;paperplane
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-params"></span>
-		&nbsp;icon-params
+		&nbsp;params
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-banknote"></span>
-		&nbsp;icon-banknote
+		&nbsp;banknote
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-data"></span>
-		&nbsp;icon-data
+		&nbsp;data
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-music"></span>
-		&nbsp;icon-music
+		&nbsp;music
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-megaphone"></span>
-		&nbsp;icon-megaphone
+		&nbsp;megaphone
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-study"></span>
-		&nbsp;icon-study
+		&nbsp;study
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-lab"></span>
-		&nbsp;icon-lab
+		&nbsp;lab
 	</span>
 	<span class="box1">
 		<span aria-hidden="true" class="icon-food"></span>
-		&nbsp;icon-food
+		&nbsp;food
 	</span>
 			</div>
 						

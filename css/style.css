@@ -117,3 +117,18 @@
 		width: 60%;
 		overflow-x: auto;
 	}
+	
+	.comment {
+		text-decoration: none;
+		color: #90EE90;
+	}
+	
+	.string_literal {
+		text-decoration: none;
+		color: grey;
+	}
+	
+	.keyword {
+		text-decoration: none;
+		color: blue;
+	}
