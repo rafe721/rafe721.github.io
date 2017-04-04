@@ -1,0 +1,406 @@
+	<!DOCTYPE html>
+<!-- saved from url=(0089)https://rawgit.com/miguel-perez/smoothState.js/master/demos/anchor-transitions/index.html -->
+<html class="gr__rawgit_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notification Bar</title>
+
+	<!-- icon -->
+	<link rel="shortcut icon" type="image/x-icon" href="icon.ico" />
+	
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/instr_style.css">
+	<link rel="stylesheet" href="./css/icon_style.css">
+	<link rel="stylesheet" href="./css/overlay_style.css">
+  </head>
+  <body class="notification_Bar">
+    <div id="page_wrapper" data-transition="moveright">
+		<div class="page_header wrap">
+			<div>
+				<H2>My Projects so far...</h2>
+			</div>
+			<nav class="project_links">
+				<a href="page-left.html" class="active" data-target="-1">Notification Bar</a>
+				<a href="index.html" data-target="0">Media Management module</a>
+				<a href="page-right.html" data-target="1">Slide Show - Android</a>
+			</nav>
+		</div>
+		<div class="page_content wrap">
+			<div class="sceneElement" data-viewport="-1">
+				<header class="nav_header">
+					<h1>Notification Bar</h1>
+					<h1><span>A simple notification bar inspired and customised from a codDrops Article</span></h1>
+				</header>
+				<div class="description">
+					<img src="img/simply_notify.png" alt="Media_module Screenshot">
+				</div>
+			<div class="colunm-content" style="width: 100%;">
+				<div class="column" style="padding: 1em; width: 50%; height: 100%; float: left;">
+					<div class="card" style="padding: 1em; float: right;">
+						<p class="small" style="margin-bottom: 1em;">Click on the button to show the notification:</p>
+						<button id="notification-trigger" class="progress-button" onclick="openIconOverlay()">
+							<span class="content">Show Notification</span>
+							<span class="progress"></span>
+						</button>
+					</div>
+				</div>
+				<div class="column hints" style="padding: 1em; width: 50%; height: 100%; float: left; border-left: 1px solid;">
+					<div class="card" style="padding: 1em;">
+						<a href="#" onclick="openNeedOverlay()">Need to know...</a> <a href="#" onclick="openImplOverlay()">A Simple Implementation</a>
+					</div>
+					<div class="card" style="padding: 1em;">
+						<a href="#" onclick="openIconOverlay()">Supported Icon Names</a>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="sceneElement page_footer wrap">
+			<div class="instruction">
+				<p>This project is available on <a href="https://github.com/rafe721/notification_bar" class="github">Github</a>.</p>
+			</div>
+			<div class="instruction">
+				<p>This project and page design was adapted from the CodDrops Article available here.</p>
+			</div>
+		</div>
+	</div>
+	
+	<!-- The overlay -->
+	<div id="need_overlay" class="overlay">
+	
+		<div class="overlay-header">
+			<div class="label_area">
+				Need To Know...
+			</div>
+			<div class="action_area">
+				<!-- Button to close the overlay navigation -->
+				<ul>
+					<li><a href="javascript:void(0)" onclick="closeNeedOverlay()"><i class="fa fa-close">&times;</i></a></li>
+				</ul>
+			</div>
+		</div>
+
+	  <!-- Overlay content -->
+		<div class="overlay-content">
+			<div class="instr_content wrap">
+				<div class="info">
+					<h3>Add the below code at the time and place where a notification needs to be shown...</h3>
+					<div class="instr">
+						<pre class="snippet">
+	<b class="keyword">var</b> notification = new <b style="color: yellow; text-decoration: none;">NotificationBar</b>({
+		message : <b class="string_literal">'&lt;p&gt;You have some interesting news in your inbox. Go &lt;a href="#"&gt;check it out&lt;/a&gt; now.&lt;/p&gt;'</b>,
+		icon: <b class="string_literal">'truck'</b>,
+		onClose : <b class="keyword">function</b>() {
+			bttn.disabled = <b class="keyword">false</b>;
+		}
+	});
+	
+	notification.show();
+						</pre>
+					</div>
+				</div>
+				
+				<div class="info">
+					<h3>Remember to include the necessary javascript and CSS files...</h3>
+					<div class="instr">
+						<pre class="snippet">
+&lt;script src="path/to/modernizr.js"&gt;&lt;/script&gt;
+&lt;script src="path/to/classie.js"&gt;&lt;/script&gt;
+
+&lt;link rel="stylesheet" type="text/css" href="css/notification.css" /&gt;
+&lt;script src="path/to/NotificationBar.js"&gt;&lt;/script&gt;
+						</pre>
+					</div>
+				</div>
+				<div class="info">
+					<h3>Initiating the NotificationBar before it needs to be shown will make the bar appear prematurely and without the proper UX..</h3>
+				</div>
+			</div>
+		</div>
+		<div class="overlay-footer">
+		</div>
+
+	</div>
+	
+	<!-- The overlay -->
+	<div id="impl_overlay" class="overlay">
+	
+		<div class="overlay-header">
+			<div class="label_area">
+				Implementation
+			</div>
+			<div class="action_area">
+				<!-- Button to close the overlay navigation -->
+				<ul>
+					<li><a href="javascript:void(0)" onclick="closeImplOverlay()"><i class="fa fa-close">&times;</i></a></li>
+				</ul>
+			</div>
+		</div>
+
+	  <!-- Overlay content -->
+		<div class="overlay-content">
+		<div class="instr_content wrap">
+			<h2>Below is a simple way of implementing it.</h2>
+			<div class="info">
+				<h3>Within the body tab of your HTML file, place a button...</h3>
+				<div class="instr">
+					<pre class="snippet">
+&lt;button id="a_button" class="progress-button"&gt;
+	&lt;span class="content"&gt;Show Notification&lt;/span&gt;
+&lt;/button&gt;
+					</pre>
+				</div>
+			</div>
+			
+			<div class="info">
+				<h3>... include the necessary javascript and CSS files...</h3>
+				<div class="instr">
+					<pre class="snippet">
+&lt;script src="path/to/modernizr.js"&gt;&lt;/script&gt;
+&lt;script src="path/to/classie.js"&gt;&lt;/script&gt;
+
+&lt;link rel="stylesheet" type="text/css" href="css/notification.css" /&gt;
+&lt;script src="path/to/NotificationBar.js"&gt;&lt;/script&gt;
+					</pre>
+				</div>
+			</div>
+			<div class="info">
+				<h3>... and add an event listener to your button...</h3>
+				<div class="instr">
+					<pre class="snippet">
+<b class="keyword">var</b> bttn = document.getElementById(<b class="string_literal">'a_button'</b>);
+bttn.addEventListener(<b class="string_literal">'click'</b>, <b class="keyword">function</b>() {
+	<b class="comment">// your code here;</b>
+});
+					</pre>
+				</div>
+			</div>
+			<div class="info">
+				<h3> Inside the event listener, initiate the notification bar and call its show() method:</h3>
+				<div class="instr">
+					<pre id="example-snippet" class="snippet">
+<b class="keyword">var</b> bttn = document.getElementById(<b class="string_literal">'a_button'</b>);
+bttn.addEventListener(<b class="string_literal">'click'</b>, <b class="keyword">function</b>() {
+
+	<b class="comment">// your button's specific operations.</b>
+
+	<b class="comment">// to notify completion.</b>
+	<b class="keyword">var</b> notification = new <b style="color: yellow; text-decoration: none;">NotificationBar</b>({
+		message : <b class="string_literal">'&lt;p&gt;You have some interesting news in your inbox. Go &lt;a href="#"&gt;check it out&lt;/a&gt; now.&lt;/p&gt;'</b>,
+		icon: <b class="string_literal">'truck'</b>,
+		onClose : <b class="keyword">function</b>() {
+			bttn.disabled = <b class="keyword">false</b>;
+		}
+	});
+	
+	notification.show();
+});
+					</pre>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="overlay-footer">
+		</div>
+
+	</div>
+	
+	<!-- The overlay -->
+	<div id="icon_overlay" class="overlay">
+
+		<div class="overlay-header">
+			<div class="label_area">
+				Implementation
+			</div>
+			<div class="action_area">
+				<!-- Button to close the overlay navigation -->
+				<ul>
+					<li><a href="javascript:void(0)" onclick="closeIconOverlay()"><i class="fa fa-close">&times;</i></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Overlay content -->
+		<div class="overlay-content">
+			<div class="icon_content wrap">
+				<div class="info">
+					<h3>The Message can be of any mark up; but the following icons are supported</h3>
+					<p>Icons optained from Lineicon</p>
+				</div>
+			<section class="clearfix" id="glyphs">
+				<header>
+					<h1>CSS Class Names</h1>
+				</header>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-heart"></span>
+					&nbsp;heart
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-cloud"></span>
+					&nbsp;cloud
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-star"></span>
+					&nbsp;star
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-tv"></span>
+					&nbsp;tv
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-sound"></span>
+					&nbsp;sound
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-video"></span>
+					&nbsp;video
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-trash"></span>
+					&nbsp;trash
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-user"></span>
+					&nbsp;user
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-key"></span>
+					&nbsp;key
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-search"></span>
+					&nbsp;search
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-settings"></span>
+					&nbsp;settings
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-camera"></span>
+					&nbsp;camera
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-tag"></span>
+					&nbsp;tag
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-lock"></span>
+					&nbsp;lock
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-bulb"></span>
+					&nbsp;bulb
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-pen"></span>
+					&nbsp;pen
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-diamond"></span>
+					&nbsp;diamond
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-display"></span>
+					&nbsp;display
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-location"></span>
+					&nbsp;location
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-eye"></span>
+					&nbsp;eye
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-bubble"></span>
+					&nbsp;bubble
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-stack"></span>
+					&nbsp;stack
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-cup"></span>
+					&nbsp;cup
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-phone"></span>
+					&nbsp;phone
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-news"></span>
+					&nbsp;news
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-mail"></span>
+					&nbsp;mail
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-like"></span>
+					&nbsp;like
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-photo"></span>
+					&nbsp;photo
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-note"></span>
+					&nbsp;note
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-clock"></span>
+					&nbsp;clock
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-paperplane"></span>
+					&nbsp;paperplane
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-params"></span>
+					&nbsp;params
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-banknote"></span>
+					&nbsp;banknote
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-data"></span>
+					&nbsp;data
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-music"></span>
+					&nbsp;music
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-megaphone"></span>
+					&nbsp;megaphone
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-study"></span>
+					&nbsp;study
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-lab"></span>
+					&nbsp;lab
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-food"></span>
+					&nbsp;food
+				</span>
+				</section>
+			</div> <!-- icon-content wrap -->
+		</div> <!-- overlay-content -->
+		<div class="overlay-footer">
+		</div>
+	</div> <!-- Icon Overlay -->
+
+    <!-- Scripts -->
+    <script src="./js/jquery-2.2.1.min.js"></script>
+    <script src="./js/jquery.smoothState.min.js"></script>
+	<script src="./js/overlay.js"></script>
+    <script src="./js/main.js"></script>
+	
+  
+</body></html>

@@ -1,314 +1,62 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Simple Notification bar</title>
-		<meta name="description" content="Various styles and effects for unobtrusive notifications on a website" />
-		<meta name="keywords" content="notification, inspiration, style, effect, growl, javascript" />
-		<meta name="author" content="Codrops" />
-		<!-- <link rel="shortcut icon" href="../favicon.ico"> -->
-		<link rel="stylesheet" type="text/css" href="css/notification.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<script src="js/modernizr.custom.js"></script>
-		<!--[if IE]>
-  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	</head>
-	<body class="color-5">
-		<div class="container">
-			<!-- Top Navigation -->
-			
-			<header class="codrops-header">
-				<h1>Simple notification bar inspired and customised from CodDrops</span></h1>
-			</header>
-			<div class="main clearfix">
-				<div class="column">
-					<p class="small">Click on the button to show the notification:</p>
-					<button id="notification-trigger" class="progress-button">
-						<span class="content">Show Notification</span>
-						<span class="progress"></span>
-					</button>
-				</div>
-			</div>
-			<h2>For a simple implementation</h2>
-			<div class=""info>
-				<h3>Within the body tab of your HTML file, place a button...</h3>
-				<div class="instr">
-					<pre class="snippet">
-&lt;button id="a_button" class="progress-button"&gt;
-	&lt;span class="content"&gt;Show Notification&lt;/span&gt;
-&lt;/button&gt;
-					</pre>
-				</div>
-			</div>
-			
-			<div class="info">
-				<h3>... include the necessary javascript and CSS files...</h3>
-				<div class="instr">
-					<pre class="snippet">
-&lt;script src="path/to/modernizr.js"&gt;&lt;/script&gt;
-&lt;script src="path/to/classie.js"&gt;&lt;/script&gt;
+<!-- saved from url=(0094)https://rawgit.com/miguel-perez/smoothState.js/master/demos/anchor-transitions/page-right.html -->
+<html class="gr__rawgit_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Media Module</title>
 
-&lt;link rel="stylesheet" type="text/css" href="css/notification.css" /&gt;
-&lt;script src="path/to/NotificationBar.js"&gt;&lt;/script&gt;
-					</pre>
-				</div>
-			</div>
-			<div class="info">
-				<h3>... and add an event listener to your button...</h3>
-				<div class="instr">
-					<pre class="snippet">
-<b class="keyword">var</b> bttn = document.getElementById(<b class="string_literal">'a_button'</b>);
-bttn.addEventListener(<b class="string_literal">'click'</b>, <b class="keyword">function</b>() {
-	<b class="comment">// your code here;</b>
-});
-					</pre>
-				</div>
-			</div>
-			<div class="info">
-				<h3> Inside the event listener, initiate the notification bar and call its show() method:</h3>
-				<div class="instr">
-					<pre class="snippet">
-<b class="keyword">var</b> bttn = document.getElementById(<b class="string_literal">'a_button'</b>);
-bttn.addEventListener(<b class="string_literal">'click'</b>, <b class="keyword">function</b>() {
-
-	<b class="comment">// your button's specific operations.</b>
-
-	<b class="comment">// to notify completion.</b>
-	<b class="keyword">var</b> notification = new <b style="color: yellow; text-decoration: none;">NotificationBar</b>({
-		message : <b class="string_literal">'&lt;p&gt;You have some interesting news in your inbox. Go &lt;a href="#"&gt;check it out&lt;/a&gt; now.&lt;/p&gt;'</b>,
-		icon: <b class="string_literal">'truck'</b>,
-		onClose : <b class="keyword">function</b>() {
-			bttn.disabled = <b class="keyword">false</b>;
-		}
-	});
+	<!-- icon -->
+	<link rel="shortcut icon" type="image/x-icon" href="icon.ico" />
 	
-	notification.show();
-});
-					</pre>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body data-gr-c-s-loaded="true" class="media_module">
+    <div id="page_wrapper" data-transition="moveright" class="">
+		<div class="page_header wrap">
+			<div>
+				<H2>My Projects so far...</h2>
+			</div>
+			<nav class="project_links">
+				<a href="page-left.html" data-target="-1">Notification Bar</a>
+				<a href="index.html" class="active" data-target="0">Media Management module</a>
+				<a href="page-right.html" data-target="1">Slide Show - Android</a>
+			</nav>
+		</div>
+		<div class="page_content wrap">
+			<div class="project_description sceneElement" data-viewport="0">
+				<header class="nav_header">
+					<h1>Media Management Module</h1>
+					<h1><span>Proof of Concept for Gain Exposure</span></h1>
+				</header>
+				<div class="project_info">
+					<div class="description">
+						<p>
+							This single page application was a proof of concept regarding how the a user could add and manage media to their accounts in Gain Exposure's nascent Advertisement Management system.
+						</p>
+						<img src="img/media_module.png" alt="Media_module Screenshot">
+						<p>
+							This concept is an easy interface for adding, managing and deleting content from a system. you can try it out here.
+						</p>
+					</div>
+					<div class="tools_used">
+						<p>Developed in <span>PHP</span> and <span>AngularJS</span> using <span>Javascript (ES5)</span>, <span>JQuery</span> and <span>HTML5/CSS3</span> to power different parts of the UI.</p>
+					</div>
+					
 				</div>
 			</div>
-			<div class="info">
-				<h3>The Message can be of any mark up; but the following icons are supported</h3>
-				<p>Icons optained from Lineicon</p>
-				<section class="mtm clearfix" id="glyphs">
-	<header>
-		<h1>CSS Class Names</h1>
-	</header>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-heart"></span>
-		&nbsp;heart
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-cloud"></span>
-		&nbsp;cloud
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-star"></span>
-		&nbsp;star
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-tv"></span>
-		&nbsp;tv
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-sound"></span>
-		&nbsp;sound
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-video"></span>
-		&nbsp;video
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-trash"></span>
-		&nbsp;trash
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-user"></span>
-		&nbsp;user
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-key"></span>
-		&nbsp;key
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-search"></span>
-		&nbsp;search
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-settings"></span>
-		&nbsp;settings
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-camera"></span>
-		&nbsp;camera
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-tag"></span>
-		&nbsp;tag
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-lock"></span>
-		&nbsp;lock
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-bulb"></span>
-		&nbsp;bulb
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-pen"></span>
-		&nbsp;pen
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-diamond"></span>
-		&nbsp;diamond
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-display"></span>
-		&nbsp;display
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-location"></span>
-		&nbsp;location
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-eye"></span>
-		&nbsp;eye
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-bubble"></span>
-		&nbsp;bubble
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-stack"></span>
-		&nbsp;stack
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-cup"></span>
-		&nbsp;cup
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-phone"></span>
-		&nbsp;phone
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-news"></span>
-		&nbsp;news
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-mail"></span>
-		&nbsp;mail
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-like"></span>
-		&nbsp;like
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-photo"></span>
-		&nbsp;photo
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-note"></span>
-		&nbsp;note
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-clock"></span>
-		&nbsp;clock
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-paperplane"></span>
-		&nbsp;paperplane
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-params"></span>
-		&nbsp;params
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-banknote"></span>
-		&nbsp;banknote
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-data"></span>
-		&nbsp;data
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-music"></span>
-		&nbsp;music
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-megaphone"></span>
-		&nbsp;megaphone
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-study"></span>
-		&nbsp;study
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-lab"></span>
-		&nbsp;lab
-	</span>
-	<span class="box1">
-		<span aria-hidden="true" class="icon-food"></span>
-		&nbsp;food
-	</span>
+		</div>
+		<div class="sceneElement page_footer wrap">
+			<div class="instruction">
+				<p>This project is available on <a href="https://github.com/rafe721/media-poc" class="github">Github</a>.</p>
 			</div>
-						
-		</div><!-- /container -->
-		<script src="js/classie.js"></script>
-		<!-- <script src="js/notificationFx.js"></script> -->
-		<script src="js/NotificationBar.js"></script>
-		<script>
-			(function() {
-				var bttn = document.getElementById( 'notification-trigger' );
+		</div>
+	</div>
 
-				// make sure..
-				bttn.disabled = false;
-
-				bttn.addEventListener( 'click', function() {
-					// simulate loading (for demo purposes only)
-					
-					var notification = new NotificationBar({
-							message : '<p>Some thing amazing has happened. Go <a href="#">check it out</a> now.</p>',
-							/* icon: 'truck', */	
-							layout : 'bar',
-							location: 'top',
-							onClose : function() {
-								bttn.disabled = false;
-							}
-						});
-
-						// show the notification
-						notification.show();
-					/* 
-					classie.add( bttn, 'active' );
-					setTimeout( function() {
-
-						classie.remove( bttn, 'active' );
-						
-						// create the notification
-						var notification = new NotificationFx({
-							message : '<p>You have some interesting news in your inbox. Go <a href="#">check it out</a> now.</p>',
-							icon: 'search',
-							layout : 'bar',
-							location: 'top',
-							effect : 'slidetop',
-							type : 'notice', // notice, warning or error
-							onClose : function() {
-								bttn.disabled = false;
-							}
-						});
-
-						// show the notification
-						notification.show();
-
-					}, 1200 );
-					
-					// disable the button (for demo purposes only)
-					this.disabled = true; */
-				} );
-			})();
-		</script>
-	</body>
-</html>
+    <!-- Scripts -->
+    <script src="./js/jquery-2.2.1.min.js"></script>
+    <script src="./js/jquery.smoothState.min.js"></script>
+    <script src="./js/main.js"></script>
+  
+</body></html>
