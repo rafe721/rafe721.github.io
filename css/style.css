@@ -185,6 +185,15 @@ a.github:hover {
 	opacity: 0.7;
 }
 
+.nav_header h1 span a {
+	font-weight: bold;
+	opacity: 1;
+}
+
+.nav_header h1 span a:hover {
+	opacity: 1;
+}
+
 nav a {
 	position: relative;
 	display: inline-block;

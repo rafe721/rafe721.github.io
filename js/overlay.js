@@ -28,3 +28,18 @@ function openImplOverlay() {
 function closeImplOverlay() {
     document.getElementById("impl_overlay").style.width = "0%";
 }
+
+function showNotification() {
+    var notification = new NotificationBar({
+		message : '<p>Something has happened somewhere in the system...</p>',
+		icon: 'news',
+		layout : 'bar',
+		location: 'top',
+		onClose : function() {
+			bttn.disabled = false;
+		}
+	});
+
+	// show the notification
+	notification.show();
+}

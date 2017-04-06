@@ -6,12 +6,12 @@
 
         // Init here.
         var $body = $('body'),
-            $main = $('#page_wrapper'),
+            $main = $('#body'),
             $site = $('html, body'),
             transition = 'fade',
             smoothState;
 
-                smoothState = $main.smoothState({
+                smoothState = $body.smoothState({
             onBefore: function($anchor, $container) {
                 var current = $('[data-viewport]').first().data('viewport'),
                     target = $anchor.data('target');
@@ -28,8 +28,8 @@
             onStart: {
                 duration: 400,
                 render: function (url, $container) {
-                    $main.attr('data-transition', transition);
-                    $main.addClass('is-exiting');
+                    $body.attr('data-transition', transition);
+                    $body.addClass('is-exiting');
                     $site.animate({scrollTop: 0});
                 }
             },

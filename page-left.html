@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="./css/instr_style.css">
 	<link rel="stylesheet" href="./css/icon_style.css">
 	<link rel="stylesheet" href="./css/overlay_style.css">
+	<link rel="stylesheet" href="./css/notification.css">
   </head>
   <body data-gr-c-s-loaded="true" id="sceneElement" class="notification_Bar" data-viewport="-1">
     <div id="page_wrapper" data-transition="moveright">
@@ -31,7 +32,7 @@
 			<div class="sceneElement" data-viewport="-1">
 				<header class="nav_header">
 					<h1>Notification Bar</h1>
-					<h1><span>A simple notification bar inspired and customised from a codDrops Article</span></h1>
+					<h1><span>A simple notification bar inspired and customised from this <a href="https://tympanus.net/codrops/2014/07/23/notification-styles-inspiration/">CodDrops Article</a></span></h1>
 				</header>
 				<div class="description">
 					<img src="img/simply_notify.png" alt="Media_module Screenshot">
@@ -39,8 +40,8 @@
 			<div class="colunm-content" style="width: 100%;">
 				<div class="column" style="padding: 1em; width: 50%; height: 100%; float: left;">
 					<div class="card" style="padding: 1em; float: right;">
-						<p class="small" style="margin-bottom: 1em;">Click on the button to show the notification:</p>
-						<button id="notification-trigger" class="progress-button" onclick="openIconOverlay()">
+						<p class="small" style="margin-bottom: 1em;">Click on the button to:</p>
+						<button id="notification-trigger" class="progress-button" onclick="showNotification()">
 							<span class="content">Show Notification</span>
 							<span class="progress"></span>
 						</button>
@@ -389,6 +390,42 @@ bttn.addEventListener(<b class="string_literal">'click'</b>, <b class="keyword">
 					<span aria-hidden="true" class="icon-food"></span>
 					&nbsp;food
 				</span>
+				<span class="icon_card">
+				<span aria-hidden="true" class="icon-t-shirt"></span>
+					&nbsp;t-shirt
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-fire"></span>
+					&nbsp;fire
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-clip"></span>
+					&nbsp;clip
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-shop"></span>
+					&nbsp;shop
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-calendar"></span>
+					&nbsp;calendar
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-vallet"></span>
+					&nbsp;vallet
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-vynil"></span>
+					&nbsp;vynil
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-truck"></span>
+					&nbsp;truck
+				</span>
+				<span class="icon_card">
+					<span aria-hidden="true" class="icon-world"></span>
+					&nbsp;world
+				</span>
 				</section>
 			</div> <!-- icon-content wrap -->
 		</div> <!-- overlay-content -->
@@ -399,7 +436,11 @@ bttn.addEventListener(<b class="string_literal">'click'</b>, <b class="keyword">
     <!-- Scripts -->
     <script src="./js/jquery-2.2.1.min.js"></script>
     <!-- <script src="./js/jquery.smoothState.min.js"></script> -->
+	<script src="./js/classie.js"></script>
+	<script src="./js/modernizr.custom.js"></script>
+	<script src="./js/NotificationBar.js"></script>
 	<script src="./js/overlay.js"></script>
+	<script src="./js/notify.js"></script>
     <!-- <script src="./js/main.js"></script> -->
   
 </body></html>
