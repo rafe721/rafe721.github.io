@@ -171,6 +171,15 @@
    
 }
 
+.info p a {
+	padding: 0;
+    text-decoration: none;
+    font-size: 2em;
+    color: #000000;
+    display: inline;
+    transition: 0.3s;
+}
+
 .overlay-footer {
     position: relative;
 	width: 100%;
