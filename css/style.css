@@ -111,6 +111,49 @@ a.github:hover {
 	background: #27ae60;
 }
 
+.android_slide::-webkit-scrollbar {
+    height: 0.6em;
+}
+
+.android_slide::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0.3);
+	/* border-radius: 10px; */
+	background-color: #27ae60;
+	/* background-color: #F5F5F5; */
+}
+
+.android_slide::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #27ae60;
+	/* background-color: #F5F5F5; */
+}
+
+.android_slide::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	/* background-color: #D62929;*/
+	background-color: #FFFFFF;
+}
+
+.android_slide::-webkit-scrollbar-button:vertical:increment {
+   
+}
+
+.android_slide::-webkit-scrollbar-button:vertical:increment:hover {
+   
+}
+
+.android_slide::-webkit-scrollbar-button:vertical:decrement {
+   
+}
+
+.android_slide::-webkit-scrollbar-button:vertical:decrement:hover {
+   
+}
+
 /*
 ------------------------------------------------------------------------------------------------------------
 	Page Wrapper
@@ -536,6 +579,7 @@ nav a {
 }
 
 #page_wrapper[data-transition=fade] .sceneElement {
+	animation-duration: .8s;
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
 }
